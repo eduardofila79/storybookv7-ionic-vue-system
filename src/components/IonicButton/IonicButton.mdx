@@ -1,0 +1,36 @@
+import { Meta } from "@storybook/blocks";
+
+import { Story, ArgsTable, Canvas, Unstyled } from "@storybook/blocks";
+import { withKnobs, boolean, select, text } from "@storybook/addon-knobs";
+
+import * as IonicButtonStories from "./IonicButton.stories";
+
+## Overview
+
+Buttons are clickable elements that are used to trigger actions. They
+communicate calls to action to the user and allow users to interact with pages
+in a variety of ways. `Button` labels express what action will occur when the
+user interacts with it.
+
+<Canvas of={IonicButtonStories.Primary} sourceState="shown" />
+
+## Variants
+
+A variant of a Button is used to express different styles of the Button component.
+These variants can be one of changed by changing the variant property.
+The variant attribute is optional and will default to Large or primary.
+The allowed attribute values are: `secondary` `tertiary`.
+
+## Sizes
+
+Buttons can be sized in two different ways: Large and Small.
+You can add the size attribute to the Button component and pass
+either lg for a Large button or sm for a Small button.
+The size attribute is optional and will default to Large or lg.
+
+## Disable
+
+Buttons can be sized in two different ways: Large and Small.
+You can select the size attribute to the Button component and pass
+either largeg for a Large button or small for a Small button.
+The size attribute is optional and will default to Large or large.
