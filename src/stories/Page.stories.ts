@@ -3,7 +3,7 @@ import { within, userEvent } from '@storybook/testing-library';
 import MyPage from './Page.vue';
 
 const meta = {
-  title: 'Example/Page',
+  title: 'Components/Page',
   component: MyPage,
   render: () => ({
     components: { MyPage },

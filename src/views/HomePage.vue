@@ -3,17 +3,17 @@
     <ion-content :fullscreen="true">
       <p>storybook vue</p>
       <ionic-button label="button in component"></ionic-button>
-      <member-card :member-info="memberInfo" @social-clicked="doHandleClick"></member-card>
+      <card-card :member-info="cardInfo" @social-clicked="doHandleClick"></card-card>
     </ion-content>
   </ion-page>
 </template>
 
 <script setup lang="ts">
-import IonicButton from "@/components/IonicButton.vue";
-import MemberCard, { MemberInfo } from "@/components/MemberCard.vue";
+import Button from "@/components/Button/Button.vue";
+import MemberCard, { CardInfo } from "@/components/Card/Card.vue";
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/vue";
 
-const memberInfo: MemberInfo = {
+const cardInfo: CardInfo = {
   title: "CEO",
   bio: "this is a bio",
   companyName: "CI Inc",

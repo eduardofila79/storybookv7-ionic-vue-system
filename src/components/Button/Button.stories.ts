@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
 import { IonApp } from "@ionic/vue";
-import IonicButton from './IonicButton.vue'
+import Button from './Button.vue'
 
 const meta = {
-  title: "Components/IonicButton",
-  component: IonicButton,
+  title: "Components/Button",
+  component: Button,
   // wrap component in ion-app
   decorators: [() => ({ template: "<ion-app><story /></ion-app>" })],
   // tags: ["autodocs"],
@@ -13,14 +13,14 @@ const meta = {
     onClick: { action: "clicked" },
   },
   args: { label: "test button" }, // default value
-} satisfies Meta<typeof IonicButton>;
+} satisfies Meta<typeof Button>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
-    label: "Primary Button",
+    label: "Primary Button"
   },
 };
 

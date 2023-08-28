@@ -15,15 +15,6 @@ const config: StorybookConfig = {
         },
       },
     },
-    // {
-    //   name: 'storybook-addon-sass-postcss',
-    //   options: {
-    //     postcssLoaderOptions: {
-    //       implementation: require('postcss'),
-    //     },
-    //   },
-    // },
-      
   ],
   framework: {
     name: "@storybook/vue3-vite",
