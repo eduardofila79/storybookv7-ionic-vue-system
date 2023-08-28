@@ -1,0 +1,119 @@
+import { Meta, Typeset } from "@storybook/addon-docs/blocks";
+import { Figma } from "storybook-addon-designs/blocks"
+
+<Meta title="Foundations/Typography" anchor />
+
+<Figma url="https://www.figma.com/file/t8a5GbSIayXIkWveW6D0Cb/ProEdge-Design-System?type=design&node-id=1-166&mode=design&t=B0hREiEXqXoE8kCd-0" />
+
+export const typography = {
+  type: {
+    primary: '"Source Serif 4 Subhead", Serif',
+  },
+  weight: {
+    bold: "700",
+    extrabold: "800",
+    black: "900",
+  },
+  size: {
+    s12: 12, // 12px
+    s14: 14, // 14px
+    s16: 16, // 16px
+    s18: 18, // 18px
+    s20: 20, // 20px
+    s24: 24, // 24px
+    s28: 28, // 28px
+    s32: 32, // 32px
+    s48: 48, // 48px
+    s56: 56, // 56px
+    s64: 64, // 64px
+  },
+};
+
+export const SampleText = "The spectacle before us was indeed sublime";
+export const SampleTextUpperCase = "THE SPECTACLE BEFORE US WAS INDEED SUBLIME";
+
+# Typography
+##
+### Header styles
+#### Header 4
+<Typeset
+  fontSizes={[
+    Number(typography.size.s64),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+#### Header 3
+<Typeset
+  fontSizes={[
+    Number(typography.size.s48),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+#### Header 2
+<Typeset
+  fontSizes={[
+    Number(typography.size.s48),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+#### Header 1-75
+<Typeset
+  fontSizes={[
+    Number(typography.size.s28),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+#### Header 1-5
+<Typeset
+  fontSizes={[
+    Number(typography.size.s24),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+#### Header 1-25
+<Typeset
+  fontSizes={[
+    Number(typography.size.s24),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleTextUpperCase}
+  fontFamily={typography.type.primary}
+/>
+#### Header 1-25 Mobile
+<Typeset
+  fontSizes={[
+    Number(typography.size.s18),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+<Typeset
+  fontSizes={[
+    Number(typography.size.s18),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleTextUpperCase}
+  fontFamily={typography.type.primary}
+/>
+#### Headers a
+<Typeset
+  fontSizes={[
+    Number(typography.size.s18),
+  ]}
+  fontWeight={typography.weight.black}
+  sampleText={SampleText}
+  fontFamily={typography.type.primary}
+/>
+##
+### Body style mixin
