@@ -20,14 +20,16 @@ import "@ionic/vue/css/text-alignment.css";
 import "@ionic/vue/css/text-transformation.css";
 
 /* Theme variables */
-import "../src/theme/variables.css";
+// import "../src/theme/variables.css";
 
 import "@fontsource-variable/source-sans-3"; // Defaults to wght axis
 import "@fontsource-variable/source-sans-3/wght-italic.css"; // Specify axis and style
 import "@fontsource-variable/source-sans-3/wght.css"; // Specify axis
 
+import StarRating from "vue-star-rating"
+
 setup((app) => {
-  app.use(IonicVue);
+  app.use(IonicVue).component('star-rating', StarRating);
 });
 
 const preview: Preview = {

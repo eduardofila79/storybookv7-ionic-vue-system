@@ -7,7 +7,7 @@ const meta = {
    * See https://storybook.js.org/docs/vue/configure/overview#configure-story-loading
    * to learn how to generate automatic titles
    */
-  title: 'Example/Header',
+  title: 'Components/Header',
   component: MyHeader,
   render: (args: any) => ({
     components: { MyHeader },
