@@ -11,24 +11,18 @@
           <ion-item class="card-header-list-item">
             <ion-label>PricewaterhouseCoopers</ion-label>
           </ion-item>
-
         </ion-list>
       </div>
-        <ion-card-subtitle>
-          <!-- <span v-if="cardInfo?.companyName">{{ cardInfo?.companyName }} : </span>
-          {{ cardInfo?.title }} -->
-
-        </ion-card-subtitle>
-        <ion-card-title>{{ cardInfo?.name }}</ion-card-title>
-        
+      
+      <ion-card-title>{{ cardInfo?.title }}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
-        <div class="ion-margin-bottom">{{ cardInfo?.bio }}</div>
+        <div class="ion-margin-bottom" v-html=cardDescriptionTruncate></div>
         <ion-grid class="ion-no-padding">
           <ion-row>
             <ion-col size="6">
               <Ratings
-                :ratings=cardInfo?.rating
+                :rating=cardInfo?.rating
                 :reviews=cardInfo?.reviews
               
               ></Ratings> 
@@ -38,24 +32,19 @@
             <ion-col size="3">Foundational</ion-col>
           </ion-row>
           <ion-row class="ion-margin-top">
-            <ion-col size="6"></ion-col>
-            <ion-col size="6"><Button class="ion-float-right" :label=cardInfo.buttonLabel @click="$emit('launch-clicked')"></Button></ion-col>
+            <ion-col>
+              <ion-row class="ion-no-padding">
+                <ion-col size="3.5"><CircleButton /></ion-col>
+                <ion-col size="3.5"><CircleButton /></ion-col>
+                <ion-col size="3.5"><CircleButton /></ion-col>
+              </ion-row>
+            </ion-col>  
+            <ion-col>
+              <Button class="ion-float-right" :label=cardInfo.buttonLabel @click="$emit('launch-clicked')"></Button>
+              <!-- @click="handleClick('social-clicked', cardInfo?.website)" -->
+            </ion-col>
           </ion-row>
         </ion-grid>
-          
-          <!-- <ion-button
-            v-if="cardInfo?.twitter"
-            @click="handleClick('social-clicked', cardInfo?.twitter)"
-          >
-            <ion-icon :icon="logoTwitter" slot="start"></ion-icon>Twitter
-          </ion-button>
-          <ion-button
-            v-if="cardInfo?.website"
-            @click="handleClick('social-clicked', cardInfo?.website)"
-          >
-            <ion-icon :icon="globe" slot="start"></ion-icon>Web Site
-          </ion-button> -->
-          
       </ion-card-content>
     </ion-card>
   </div>
@@ -75,22 +64,18 @@ import {
 import { logoTwitter, logoLinkedin, globe } from "ionicons/icons";
 import './card.scss';
 
+import { computed, reactive } from 'vue';
 import Button from '../../components/Button/Button.vue'
 import Ratings from '../../components/Ratings/Ratings.vue'
-
+import CircleButton from '../../components/CircleButton/CircleButton.vue'
 
 export interface CardInfo {
-  name: string;
   title: string;
-  companyName?: string;
-  bio: string;
-  twitter?: string;
-  linkedIn?: string;
-  website?: string;
+  description: string;
   buttonLabel?: string;
-  buttonVariant?: string;
   rating?: number,
   reviews?: number,
+  descriptionCharacters: number,
 }
 
 const props = defineProps<{
@@ -101,12 +86,12 @@ const emit = defineEmits<{
   (e: "launch-clicked", value: string | undefined): void;
 }>();
 
+const cardDescriptionTruncate = computed(() => {
+  return (props.cardInfo.description.length > props.cardInfo.descriptionCharacters) ? props.cardInfo.description.slice(0, props.cardInfo.descriptionCharacters-1) + '&hellip;' : props.cardInfo.description;
+})
 
 const handleClick = (event: string, value: string | undefined) => {
   emit("launch-clicked", value);
 };
-</script>
 
-<style scoped>
-/* Add your component-specific styles here */
-</style>
+</script>

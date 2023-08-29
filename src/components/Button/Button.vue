@@ -20,8 +20,6 @@ const props = withDefaults(
   { label: "test button" }
 );
 
-console.log(props.size);
-
 const emit = defineEmits<{
   (e: "click"): void;
 }>();
