@@ -1,32 +1,24 @@
-import type { Meta, StoryObj } from "@storybook/vue3";
+import type { Meta, StoryObj } from "@storybook/vue3"
 
-import { IonApp } from "@ionic/vue";
 import CircleButton from './CircleButton.vue'
+
+import { circleButtons } from '../../data/circleButtons'
 
 const meta = {
   title: "Components/CircleButton",
   component: CircleButton,
-  // wrap component in ion-app
-  decorators: [() => ({ template: "<ion-app><story /></ion-app>" })],
-  // tags: ["autodocs"],
+  // tags: ["autodocs"], 
+  args: {
+    ...circleButtons[0],
+  },
   argTypes: {
     onClick: { action: "clicked" },
   },
-  args: { label: "test button" }, // default value
 } satisfies Meta<typeof CircleButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    label: "Primary Button"
-  },
-};
+export const Default: Story = {
 
-export const Secondary: Story = {
-  args: {
-    label: "Secondary Button",
-    variant: "secondary"
-  },
 };

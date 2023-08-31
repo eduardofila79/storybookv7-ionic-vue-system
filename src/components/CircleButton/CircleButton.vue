@@ -1,6 +1,6 @@
 <template>
   <ion-button fill="clear" shape="round" class="pe-circle-button">
-    <ion-icon src="icons/share.svg"></ion-icon>
+    <ion-icon :src=iconPath></ion-icon>
   </ion-button>
 
 </template>
@@ -10,25 +10,22 @@ import './circleButton.scss';
 import { IonButton } from "@ionic/vue";
 import { computed } from 'vue';
 
-const myCustomIcon = "/assets/share.svg";
+export interface CircleButtonInfo {
+  icon: string,
+}
 
-const props = withDefaults(
-  
-  defineProps<{
-    /**
-     * The label of the button
-     */
-  }>(),
-  { label: "test button" }
-);
-
+const props = defineProps<CircleButtonInfo>();
 
 const emit = defineEmits<{
   (e: "click"): void;
 }>();
 
-
 const onClick = () => {
   emit("click");
 };
+
+const iconPath = computed(() => {
+    return "icons/" + props.icon + ".svg";
+ });
+
 </script>

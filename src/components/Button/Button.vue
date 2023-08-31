@@ -29,7 +29,9 @@ const classes = computed(() => ({
   'pe-button': true,
   'pe-button--primary': (props.variant === 'primary') || (props.variant === undefined),
   'pe-button--secondary': props.variant === 'secondary',
+  'pe-button--tertiary': props.variant === 'tertiary',
   'pe-button--large': (props.size === 'large') || (props.size === undefined),
+  'pe-button--small': props.size === 'small',
 }));
 
 const onClick = () => {
