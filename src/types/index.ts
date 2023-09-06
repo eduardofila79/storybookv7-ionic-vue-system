@@ -2,9 +2,9 @@ export type CardInfo = {
     id: number
     title: string
     description: string
-    buttonLabel?: string
-    rating?: number
-    reviews?: number
+    buttonLabel?: string | undefined
+    rating?: number | undefined
+    reviews?: number | undefined
     descriptionCharacters: number
     iconButtons: CircleButtonInfo[]
 

@@ -3,7 +3,7 @@
     <ion-content :fullscreen="true">
       <p>storybook vue</p>
       <ionic-button label="button in component"></ionic-button>
-      <card-card :member-info="cardInfo" @social-clicked="doHandleClick"></card-card>
+      <card-card :member-info="cards" @social-clicked="doHandleClick"></card-card>
     </ion-content>
   </ion-page>
 </template>
@@ -12,16 +12,8 @@
 import Button from "@/components/Button/Button.vue";
 import MemberCard, { CardInfo } from "@/components/Card/Card.vue";
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from "@ionic/vue";
+import { cards } from '../data/cards'
 
-const cardInfo: CardInfo = {
-  title: "CEO",
-  bio: "this is a bio",
-  companyName: "CI Inc",
-  name: "Aaron Saunders",
-  twitter: "twitter/aaronksaunders",
-  linkedIn: "linkedIn/aaronksaunder",
-  website: "www.ci.com",
-};
 
 const doHandleClick = (value: string | undefined) => {
   alert(value + " was clicked");

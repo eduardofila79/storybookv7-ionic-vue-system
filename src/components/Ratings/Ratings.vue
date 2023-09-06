@@ -19,8 +19,8 @@
 import './ratings.scss';
 
 const props = defineProps<{
-    rating: number,
-    reviews: number,
+    rating?: number,
+    reviews?: number,
   }>();
 
 </script>

@@ -21,7 +21,7 @@ const meta = {
         step: 0.5,
       },
     },  
-    onLaunchClicked: { action: "launch-clicked" },
+    // onLaunchClicked: { action: "launch-clicked" },
   },
 } satisfies Meta<typeof Card>;
 
@@ -31,4 +31,3 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   
 };
-

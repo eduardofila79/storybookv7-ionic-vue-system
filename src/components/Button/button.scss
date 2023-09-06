@@ -20,8 +20,8 @@
   }
   
   .button-native {
-    padding-left: unset;
-    padding-right: unset;
+    padding-left: unset !important;
+    padding-right: unset !important;
     padding: 0;
   }
 }
