@@ -1,9 +1,9 @@
 <template>
-  <ion-button :class="classes" @click="onClick">{{ label }} </ion-button>
+  <ion-button :class="classes" :disabled="isDisabled" @click="onClick">{{ label }} </ion-button>
 </template>
 
 <script lang="ts" setup>
-import './ionicButton.scss';
+import './button.scss';
 import { IonButton } from "@ionic/vue";
 import { computed } from 'vue';
 
@@ -13,13 +13,12 @@ const props = withDefaults(
      * The label of the button
      */
     label: string;
+    isDisabled?: boolean;
     variant?: 'primary' | 'secondary' | 'tertiary',
     size?: 'small' | 'large',
   }>(),
   { label: "test button" }
 );
-
-console.log(props.size);
 
 const emit = defineEmits<{
   (e: "click"): void;
@@ -27,10 +26,12 @@ const emit = defineEmits<{
 
 const classes = computed(() => ({
   'ion-color': true,
-  'storybook-button': true,
-  'storybook-button--primary': (props.variant === 'primary') || (props.variant === undefined),
-  'storybook-button--secondary': props.variant === 'secondary',
-  'storybook-button--large': (props.size === 'large') || (props.size === undefined),
+  'pe-button': true,
+  'pe-button--primary': (props.variant === 'primary') || (props.variant === undefined),
+  'pe-button--secondary': props.variant === 'secondary',
+  'pe-button--tertiary': props.variant === 'tertiary',
+  'pe-button--large': (props.size === 'large') || (props.size === undefined),
+  'pe-button--small': props.size === 'small',
 }));
 
 const onClick = () => {

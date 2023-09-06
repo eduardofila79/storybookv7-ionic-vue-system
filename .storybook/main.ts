@@ -5,7 +5,8 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@storybook/addon-mdx-gfm",
+    "@storybook/addon-docs",
+    "@storybook-addon-designs",
     {
       name: '@storybook/addon-styling',
       options: {
@@ -15,15 +16,6 @@ const config: StorybookConfig = {
         },
       },
     },
-    // {
-    //   name: 'storybook-addon-sass-postcss',
-    //   options: {
-    //     postcssLoaderOptions: {
-    //       implementation: require('postcss'),
-    //     },
-    //   },
-    // },
-      
   ],
   framework: {
     name: "@storybook/vue3-vite",

@@ -1,0 +1,15 @@
+.pe-circle-button {
+  --padding-start: 1px;
+  --padding-end: 1px;
+  border-radius: 100px;
+  height: 35px;
+  width: 35px;
+  position: relative;
+  border: 1px solid #D6D6D6;
+  
+
+  &:hover {
+    cursor: pointer;
+  }
+  
+}
